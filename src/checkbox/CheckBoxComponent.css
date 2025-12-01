@@ -1,7 +1,6 @@
 
 .checkbox-component {
     padding: 2px;
-    border-radius: 15px;
     cursor: pointer;
     display: flex;
 }
@@ -11,6 +10,14 @@
     height: 0px;
     margin: 0px;
     position: absolute;
+}
+
+input:checked:focus-visible + .track, input:checked:hover + .track {
+    border: 1px solid #4F46E5;
+    box-shadow: 0px 0px 0px 4px #E9EAFC;}
+
+input:focus-visible + .track:after, input:hover + .track:after {
+    inset: 1px;
 }
 
 .small .track {
@@ -23,8 +30,18 @@
     height: 24px;
 }
 
+input:hover + .track, input:focus-visible + .track {
+    background: #D1D5DB;
+    border: 1px solid #9CA3AF;
+    box-shadow: 0px 0px 0px 4px #EBEDEF;
+}
+
 input:checked + .track {
     background: #4338CA;
+}
+
+input:disabled + .track:after {
+    background: #D1D5DB;
 }
 
 .track {
